@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class App {
     /*
 
@@ -49,6 +51,10 @@ public class App {
         System.out.println();
         System.out.println("Es: 5");
         votazione();
+        System.out.println();
+        System.out.println("Es: 6");
+        prenotaCamera();
+
     }
 
     public static void prenotazione() {
@@ -213,6 +219,63 @@ public class App {
 
         sistema.stampaRisultati();
 
+    }
+
+    public static void prenotaCamera() {
+
+        SistemaDiPrenotazioneHotel sistema = new SistemaDiPrenotazioneHotel();
+
+        // Aggiunta Camere
+        Camera camera1 = new Camera(101, "Singola");
+        Camera camera2 = new Camera(102, "Doppia");
+        sistema.aggiungiCamera(camera1);
+        sistema.aggiungiCamera(camera2);
+
+        // Aggiunta Clienti
+        Cliente cliente1 = new Cliente("Felice Limonta");
+        Cliente cliente2 = new Cliente("Speranza Persa");
+
+        // Prenotazioni
+        try {
+
+            sistema.effettuaPrenotazione(cliente1, camera1, LocalDate.of(2024, 7, 1), LocalDate.of(2024, 7, 10));
+            sistema.effettuaPrenotazione(cliente2, camera2, LocalDate.of(2024, 7, 5), LocalDate.of(2024, 7, 15));
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
+        // Mostra camere e prenotazioni disponibili
+        sistema.stampaPrenotazioni();
+        sistema.stampaCamereDisponibili();
+
+        // Modifica prenotazione
+        try {
+
+            sistema.modificaPrenotazione(cliente1, LocalDate.of(2024, 7, 2), LocalDate.of(2024, 7, 12));
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
+        // Cancella prenotazione
+        try {
+
+            sistema.cancellaPrenotazione(cliente2);
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
+        // Mostra aggiornamenti dopo modifiche
+        sistema.stampaPrenotazioni();
+        sistema.stampaCamereDisponibili();
     }
 
 }
