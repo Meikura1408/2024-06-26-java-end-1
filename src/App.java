@@ -2,17 +2,6 @@ import java.time.LocalDate;
 
 public class App {
     /*
-
-     * 
-     * ES6: Sistema di Prenotazione Hotel
-     * 
-     * Definisci classi per Camera, Cliente, e Prenotazione. Utilizza una mappa per
-     * associare clienti a prenotazioni e una lista di camere disponibili.
-     * Implementa metodi per effettuare, modificare e cancellare prenotazioni,
-     * assicurandoti di gestire eccezioni come camere non disponibili o
-     * cancellazioni tardive.
-     * 
-     * ---------------------------------------------------------------------------
      * 
      * ES7: Impiegato e Manager
      * 
@@ -159,7 +148,7 @@ public class App {
         elenco.stampaContatti();
 
         // Cerco un contatto
-        Contatto trovato = elenco.cercaContatto("Michael Jackson");
+        Contatto trovato = elenco.cercaContatto("Perla Madonna");
 
         if (trovato != null) {
 
