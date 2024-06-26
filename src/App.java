@@ -1,32 +1,33 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        test();
+        prenotazione();
     }
 
-    public static void test() {
+    public static void prenotazione() {
 
-        System.out.println("Hello, World!");
+        Prenotazione teatro = new Prenotazione(100);
+
+        // prenoto posti
+        System.out.println(teatro.prenotaPosto(10));
+        System.out.println(teatro.prenotaPosto(10)); // false
+        System.out.println(teatro.prenotaPosto(20)); 
+
+        // verifico disponibilità dei posti
+        System.out.println(teatro.verificaDisponibilita(10));
+        System.out.println(teatro.verificaDisponibilita(15)); 
+
+        // annullo prenotazione
+        System.out.println(teatro.annullaPrenotazione(10));
+        System.out.println(teatro.annullaPrenotazione(10)); // false
+
+        //verifico disponibilità di più posti
+        int[] postiDaVerificare = {10, 20, 30};
+        System.out.println(teatro.verificaDisponibilitaMultipla(postiDaVerificare));
     }
 }
 
-/**
- * TODO:
- * 
- * ES0: Creare un repository su GitHub con il seguente nome:
- * 2024-06-26-java-end-1
- * 
- * Caricare tutti gli esercizi in un unico progetto sulla stessa repo
- * 
- * 
- * ES1: Sistema di Prenotazioni
- * 
- * Crea una classe Prenotazione che possa essere utilizzata da un teatro per
- * tenere traccia delle prenotazioni dei posti. Utilizza un array di booleani
- * per rappresentare i posti: true se il posto è prenotato, false altrimenti.
- * Implementa metodi per prenotare un posto, annullare la prenotazione e
- * verificare se un o piu' posti sono disponibili.
- * 
+/*
  * ---------------------------------------------------------------------------
  * 
  * ES2: Registro Studenti
