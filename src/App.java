@@ -1,44 +1,38 @@
 public class App {
-/* ES5: Sistema di Votazione
- * 
- * Crea classi per Candidato e Elettore, dove ogni Elettore può votare per un
- * Candidato. Implementa un meccanismo usando mappe per tenere traccia dei voti
- * ricevuti da ogni candidato. Assicurati di gestire le eccezioni per casi come
- * doppi voti o voti a candidati non esistenti.
- * 
- * ---------------------------------------------------------------------------
- * 
- * ES6: Sistema di Prenotazione Hotel
- * 
- * Definisci classi per Camera, Cliente, e Prenotazione. Utilizza una mappa per
- * associare clienti a prenotazioni e una lista di camere disponibili.
- * Implementa metodi per effettuare, modificare e cancellare prenotazioni,
- * assicurandoti di gestire eccezioni come camere non disponibili o
- * cancellazioni tardive.
- * 
- * ---------------------------------------------------------------------------
- * 
- * ES7: Impiegato e Manager
- * 
- * Crea una classe Impiegato con attributi come nome, salario e metodi per
- * aumentaSalario(int percentuale). Deriva da questa una classe Manager che
- * aggiunge l'attributo bonus. Il metodo aumentaSalario del manager dovrebbe
- * considerare anche il bonus nell'aumento. Mostra come puoi utilizzare il
- * polimorfismo per gestire diversi tipi di impiegati in un array di tipo
- * Impiegato.
- * 
- * ---------------------------------------------------------------------------
- * 
- * ES8: Sistema di Prenotazione Alberghiera
- * 
- * Progetta una classe astratta CameraAlbergo con metodi come calcolaCosto() e
- * numeroLetti(). Deriva da questa diverse classi specifiche come CameraSingola,
- * CameraDoppia e Suite. Implementa calcolaCosto in modo diverso per ogni tipo
- * di camera. Utilizza una collezione per gestire tutte le camere disponibili in
- * un albergo.
- * 
- * ---------------------------------------------------------------------------
- */
+    /*
+
+     * 
+     * ES6: Sistema di Prenotazione Hotel
+     * 
+     * Definisci classi per Camera, Cliente, e Prenotazione. Utilizza una mappa per
+     * associare clienti a prenotazioni e una lista di camere disponibili.
+     * Implementa metodi per effettuare, modificare e cancellare prenotazioni,
+     * assicurandoti di gestire eccezioni come camere non disponibili o
+     * cancellazioni tardive.
+     * 
+     * ---------------------------------------------------------------------------
+     * 
+     * ES7: Impiegato e Manager
+     * 
+     * Crea una classe Impiegato con attributi come nome, salario e metodi per
+     * aumentaSalario(int percentuale). Deriva da questa una classe Manager che
+     * aggiunge l'attributo bonus. Il metodo aumentaSalario del manager dovrebbe
+     * considerare anche il bonus nell'aumento. Mostra come puoi utilizzare il
+     * polimorfismo per gestire diversi tipi di impiegati in un array di tipo
+     * Impiegato.
+     * 
+     * ---------------------------------------------------------------------------
+     * 
+     * ES8: Sistema di Prenotazione Alberghiera
+     * 
+     * Progetta una classe astratta CameraAlbergo con metodi come calcolaCosto() e
+     * numeroLetti(). Deriva da questa diverse classi specifiche come CameraSingola,
+     * CameraDoppia e Suite. Implementa calcolaCosto in modo diverso per ogni tipo
+     * di camera. Utilizza una collezione per gestire tutte le camere disponibili in
+     * un albergo.
+     * 
+     * ---------------------------------------------------------------------------
+     */
     public static void main(String[] args) throws Exception {
 
         System.out.println("Es: 1");
@@ -52,6 +46,9 @@ public class App {
         System.out.println();
         System.out.println("Es: 4");
         rubrica();
+        System.out.println();
+        System.out.println("Es: 5");
+        votazione();
     }
 
     public static void prenotazione() {
@@ -182,6 +179,40 @@ public class App {
 
         // Stampa i contatti aggiornati
         elenco.stampaContatti();
+
+    }
+
+    public static void votazione() throws Exception {
+
+        SistemaDiVotazione sistema = new SistemaDiVotazione();
+
+        // Candidati
+        Candidato candidato1 = new Candidato("Giovanni");
+        Candidato candidato2 = new Candidato("Lia");
+        sistema.aggiungiCandidato(candidato1);
+        sistema.aggiungiCandidato(candidato2);
+
+        // Elettori
+        Elettore elettore1 = new Elettore("Carlo");
+        Elettore elettore2 = new Elettore("Michele");
+        sistema.aggiungiElettore(elettore1);
+        sistema.aggiungiElettore(elettore2);
+
+        // Votazione
+
+        try {
+
+            sistema.vota("Carlo", "Giovanni");
+            sistema.vota("Michele", "Lia");
+            sistema.vota("Carlo", "Lia"); // doppio voto
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
+        sistema.stampaRisultati();
 
     }
 
