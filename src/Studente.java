@@ -12,7 +12,6 @@ public class Studente {
     }
 
     // Aggiungi voti
-
     public void aggiungiVoto(int voto) throws IllegalArgumentException {
 
         if (voto < 0 || voto > 10) {

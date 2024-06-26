@@ -38,7 +38,7 @@ public class App {
 
             studente.aggiungiVoto(7);
             studente.aggiungiVoto(4);
-            studente.aggiungiVoto(10);
+            studente.aggiungiVoto(11);
 
         } catch (IllegalArgumentException e) {
 
