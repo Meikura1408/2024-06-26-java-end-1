@@ -3,17 +3,6 @@ import java.time.LocalDate;
 public class App {
     /*
      * 
-     * ES7: Impiegato e Manager
-     * 
-     * Crea una classe Impiegato con attributi come nome, salario e metodi per
-     * aumentaSalario(int percentuale). Deriva da questa una classe Manager che
-     * aggiunge l'attributo bonus. Il metodo aumentaSalario del manager dovrebbe
-     * considerare anche il bonus nell'aumento. Mostra come puoi utilizzare il
-     * polimorfismo per gestire diversi tipi di impiegati in un array di tipo
-     * Impiegato.
-     * 
-     * ---------------------------------------------------------------------------
-     * 
      * ES8: Sistema di Prenotazione Alberghiera
      * 
      * Progetta una classe astratta CameraAlbergo con metodi come calcolaCosto() e
