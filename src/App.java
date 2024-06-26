@@ -9,6 +9,9 @@ public class App {
         System.out.println();
         System.out.println("Es: 3");
         contoBancario();
+        System.out.println();
+        System.out.println("Es: 4");
+        rubrica();
     }
 
     public static void prenotazione() {
@@ -92,16 +95,54 @@ public class App {
 
     }
 
-}
+    public static void rubrica() {
 
-/*
- * ES4: Elenco Telefonico
- * 
- * Implementa una classe Contatto che rappresenti un contatto telefonico con
- * nome e numero di telefono (stringa). Crea una classe ElencoTelefonico che
- * gestisca una
- * lista di contatti. Includi metodi per aggiungere, rimuovere e cercare
- * contatti. Gestisci eventuali eccezioni relative all'inserimento di numeri di
- * telefono non validi.
- * 
- */
+        ElencoTelefonico elenco = new ElencoTelefonico();
+
+        try {
+
+            Contatto contatto1 = new Contatto("Gina Scorre", "1234567890");
+            Contatto contatto2 = new Contatto("Dottor Bavaro", "0987654321");
+            elenco.aggiungiContatto(contatto1);
+            elenco.aggiungiContatto(contatto2);
+
+        } catch (IllegalArgumentException e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
+        // Stampo i contatti
+        elenco.stampaContatti();
+
+        // Cerco un contatto
+        Contatto trovato = elenco.cercaContatto("Michael Jackson");
+
+        if (trovato != null) {
+
+            System.out.println("Contatto trovato: " + trovato);
+
+        } else {
+
+            System.out.println("Contatto non trovato.");
+        }
+
+        // Rimuovo un contatto
+        boolean rimosso = elenco.rimuoviContatto("Gina Scorre");
+
+        if (rimosso) {
+
+            System.out.println("Contatto rimosso con successo.");
+
+        } else {
+
+            System.out.println("Contatto non trovato.");
+
+        }
+
+        // Stampa i contatti aggiornati
+        elenco.stampaContatti();
+
+    }
+
+}
