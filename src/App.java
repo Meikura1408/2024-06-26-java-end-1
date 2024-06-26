@@ -1,4 +1,44 @@
 public class App {
+/* ES5: Sistema di Votazione
+ * 
+ * Crea classi per Candidato e Elettore, dove ogni Elettore può votare per un
+ * Candidato. Implementa un meccanismo usando mappe per tenere traccia dei voti
+ * ricevuti da ogni candidato. Assicurati di gestire le eccezioni per casi come
+ * doppi voti o voti a candidati non esistenti.
+ * 
+ * ---------------------------------------------------------------------------
+ * 
+ * ES6: Sistema di Prenotazione Hotel
+ * 
+ * Definisci classi per Camera, Cliente, e Prenotazione. Utilizza una mappa per
+ * associare clienti a prenotazioni e una lista di camere disponibili.
+ * Implementa metodi per effettuare, modificare e cancellare prenotazioni,
+ * assicurandoti di gestire eccezioni come camere non disponibili o
+ * cancellazioni tardive.
+ * 
+ * ---------------------------------------------------------------------------
+ * 
+ * ES7: Impiegato e Manager
+ * 
+ * Crea una classe Impiegato con attributi come nome, salario e metodi per
+ * aumentaSalario(int percentuale). Deriva da questa una classe Manager che
+ * aggiunge l'attributo bonus. Il metodo aumentaSalario del manager dovrebbe
+ * considerare anche il bonus nell'aumento. Mostra come puoi utilizzare il
+ * polimorfismo per gestire diversi tipi di impiegati in un array di tipo
+ * Impiegato.
+ * 
+ * ---------------------------------------------------------------------------
+ * 
+ * ES8: Sistema di Prenotazione Alberghiera
+ * 
+ * Progetta una classe astratta CameraAlbergo con metodi come calcolaCosto() e
+ * numeroLetti(). Deriva da questa diverse classi specifiche come CameraSingola,
+ * CameraDoppia e Suite. Implementa calcolaCosto in modo diverso per ogni tipo
+ * di camera. Utilizza una collezione per gestire tutte le camere disponibili in
+ * un albergo.
+ * 
+ * ---------------------------------------------------------------------------
+ */
     public static void main(String[] args) throws Exception {
 
         System.out.println("Es: 1");
