@@ -199,7 +199,6 @@ public class App {
         sistema.aggiungiElettore(elettore2);
 
         // Votazione
-
         try {
 
             sistema.vota("Carlo", "Giovanni");
