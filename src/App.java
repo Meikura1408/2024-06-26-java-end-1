@@ -1,7 +1,11 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
+        System.out.println("Es: 1");
         prenotazione();
+        System.out.println();
+        System.out.println("Es: 2");
+        registroStudenti();
     }
 
     public static void prenotazione() {
@@ -25,19 +29,27 @@ public class App {
         int[] postiDaVerificare = {10, 20, 30};
         System.out.println(teatro.verificaDisponibilitaMultipla(postiDaVerificare));
     }
+
+    public static void registroStudenti() {
+
+        Studente studente = new Studente("Felice Mastronzo", "123456");
+
+        try {
+
+            studente.aggiungiVoto(7);
+            studente.aggiungiVoto(4);
+            studente.aggiungiVoto(10);
+
+        } catch (IllegalArgumentException e) {
+
+            System.out.println(e.getMessage());
+        }
+
+        studente.stampaDettagli();
+    }
 }
 
 /*
- * ---------------------------------------------------------------------------
- * 
- * ES2: Registro Studenti
- * 
- * Crea una classe Studente con attributi come nome, matricola, e voti (usa un
- * ArrayList). Aggiungi metodi per aggiungere voti, calcolare la media dei voti,
- * e stampare i dettagli dello studente. Implementa la gestione delle eccezioni
- * per evitare errori nell'inserimento dei voti.
- * 
- * ---------------------------------------------------------------------------
  * 
  * ES3: Simulatore di Banca
  * 
