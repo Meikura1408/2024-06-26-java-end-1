@@ -43,6 +43,9 @@ public class App {
         System.out.println();
         System.out.println("Es: 6");
         prenotaCamera();
+        System.out.println();
+        System.out.println("Es: 7");
+        salario();
 
     }
 
@@ -265,6 +268,24 @@ public class App {
         // Mostra aggiornamenti dopo modifiche
         sistema.stampaPrenotazioni();
         sistema.stampaCamereDisponibili();
+    }
+
+    public static void salario() {
+
+        Impiegato[] impiegati = new Impiegato[3];
+      
+        impiegati[0] = new Impiegato("Gustavo Lafava", 30000);
+        impiegati[1] = new Impiegato("Massimo Dellapena", 32000);
+        impiegati[2] = new Manager("Benedetta Cappella", 50000, 10000);
+        
+    
+        for (int i = 0; i < impiegati.length; i++) {
+
+            impiegati[i].aumentaSalario(10);
+            System.out.println(impiegati[i]);
+
+        }
+
     }
 
 }
