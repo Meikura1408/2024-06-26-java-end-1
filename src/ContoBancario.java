@@ -1,8 +1,8 @@
 public class ContoBancario {
 
-    private double saldo;
+    private int saldo;
 
-    public ContoBancario(double saldoIniziale) {
+    public ContoBancario(int saldoIniziale) {
 
         if (saldoIniziale < 0) {
 
@@ -13,7 +13,7 @@ public class ContoBancario {
     }
 
     // Deposito soldi
-    public void deposita(double importo) {
+    public void deposita(int importo) {
 
         if (importo < 0) {
             throw new IllegalArgumentException("L'importo da depositare non può essere negativo.");
@@ -24,7 +24,7 @@ public class ContoBancario {
     }
 
     // Prelevo soldi
-    public void preleva(double importo) throws IllegalArgumentException {
+    public void preleva(int importo) throws IllegalArgumentException {
 
         if (importo < 0) {
 
@@ -43,14 +43,14 @@ public class ContoBancario {
     }
 
     // Saldo
-    public double getSaldo() {
+    public int getSaldo() {
 
         return saldo;
     }
 
     public void stampaSaldo() {
 
-        System.out.println("Saldo corrente: " + saldo + "€");
+        System.out.println("Saldo corrente: " + saldo + " euro");
 
     }
 }

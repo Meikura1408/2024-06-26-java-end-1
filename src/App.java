@@ -6,6 +6,9 @@ public class App {
         System.out.println();
         System.out.println("Es: 2");
         registroStudenti();
+        System.out.println();
+        System.out.println("Es: 3");
+        contoBancario();
     }
 
     public static void prenotazione() {
@@ -15,18 +18,18 @@ public class App {
         // prenoto posti
         System.out.println(teatro.prenotaPosto(10));
         System.out.println(teatro.prenotaPosto(10)); // false
-        System.out.println(teatro.prenotaPosto(20)); 
+        System.out.println(teatro.prenotaPosto(20));
 
         // verifico disponibilità dei posti
         System.out.println(teatro.verificaDisponibilita(10));
-        System.out.println(teatro.verificaDisponibilita(15)); 
+        System.out.println(teatro.verificaDisponibilita(15));
 
         // annullo prenotazione
         System.out.println(teatro.annullaPrenotazione(10));
         System.out.println(teatro.annullaPrenotazione(10)); // false
 
-        //verifico disponibilità di più posti
-        int[] postiDaVerificare = {10, 20, 30};
+        // verifico disponibilità di più posti
+        int[] postiDaVerificare = { 10, 20, 30 };
         System.out.println(teatro.verificaDisponibilitaMultipla(postiDaVerificare));
     }
 
@@ -47,6 +50,48 @@ public class App {
 
         studente.stampaDettagli();
     }
+
+    public static void contoBancario() {
+
+        ContoBancario conto = new ContoBancario(1000);
+
+        // Deposito soldi
+        try {
+
+            conto.deposita(500);
+            conto.stampaSaldo();
+
+        } catch (IllegalArgumentException e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
+        // Prelevo soldi
+        try {
+
+            conto.preleva(200);
+            conto.stampaSaldo();
+
+        } catch (IllegalArgumentException e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
+        try {
+
+            conto.preleva(2000);
+
+        } catch (IllegalArgumentException e) {
+
+            System.out.println(e.getMessage());
+        }
+
+        conto.stampaSaldo();
+
+    }
+
 }
 
 /*
@@ -62,7 +107,8 @@ public class App {
  * ES4: Elenco Telefonico
  * 
  * Implementa una classe Contatto che rappresenti un contatto telefonico con
- * nome e numero di telefono (stringa). Crea una classe ElencoTelefonico che gestisca una
+ * nome e numero di telefono (stringa). Crea una classe ElencoTelefonico che
+ * gestisca una
  * lista di contatti. Includi metodi per aggiungere, rimuovere e cercare
  * contatti. Gestisci eventuali eccezioni relative all'inserimento di numeri di
  * telefono non validi.
